@@ -3,7 +3,6 @@ package com.metazz.metamall.order.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +22,7 @@ import com.metazz.common.utils.R;
  *
  * @author metazz
  * @email 772150928@qq.com
- * @date 2023-02-28 15:33:33
+ * @date 2023-03-01 17:35:21
  */
 @RestController
 @RequestMapping("order/orderitem")
@@ -35,7 +34,7 @@ public class OrderItemController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("order:orderitem:list")
+    //@RequiresPermissions("order:orderitem:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderItemService.queryPage(params);
 
@@ -47,7 +46,7 @@ public class OrderItemController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("order:orderitem:info")
+    //@RequiresPermissions("order:orderitem:info")
     public R info(@PathVariable("id") Long id){
 		OrderItemEntity orderItem = orderItemService.getById(id);
 
@@ -58,7 +57,7 @@ public class OrderItemController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("order:orderitem:save")
+    //@RequiresPermissions("order:orderitem:save")
     public R save(@RequestBody OrderItemEntity orderItem){
 		orderItemService.save(orderItem);
 
@@ -69,7 +68,7 @@ public class OrderItemController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("order:orderitem:update")
+    //@RequiresPermissions("order:orderitem:update")
     public R update(@RequestBody OrderItemEntity orderItem){
 		orderItemService.updateById(orderItem);
 
@@ -80,7 +79,7 @@ public class OrderItemController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("order:orderitem:delete")
+    //@RequiresPermissions("order:orderitem:delete")
     public R delete(@RequestBody Long[] ids){
 		orderItemService.removeByIds(Arrays.asList(ids));
 
