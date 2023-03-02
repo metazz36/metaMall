@@ -4,6 +4,12 @@ spring:
     password: root
     url: jdbc:mysql://114.132.164.91:3306/metaMall_oms
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: order
 
 
 mybatis-plus:
@@ -14,7 +20,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 server:
-  port: 10300
+  port: 10500
 logging:
   level:
     com.atguigu.gulimall: error

@@ -4,6 +4,12 @@ spring:
     password: root
     url: jdbc:mysql://114.132.164.91:3306/metaMall_pms
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: product
 
 
 mybatis-plus:
