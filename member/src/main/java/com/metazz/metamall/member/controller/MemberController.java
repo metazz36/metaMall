@@ -3,6 +3,7 @@ package com.metazz.metamall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.metazz.metamall.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,19 @@ import com.metazz.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    /**
+     * 列表
+     */
+    @RequestMapping("/testOpenFeign/{id}")
+    public R testOpenFeign(@PathVariable("id") Long id){
+        R info = couponFeignService.info(id);
+        return R.ok().put("data",info);
+    }
+
 
     /**
      * 列表
