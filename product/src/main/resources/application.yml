@@ -23,5 +23,5 @@ server:
   port: 10100
 logging:
   level:
-    com.atguigu.gulimall: error
+    com.metazz.metamall: debug
 
