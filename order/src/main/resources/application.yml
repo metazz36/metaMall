@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://114.132.164.91:3306/metaMall_oms
+    url: jdbc:mysql://127.0.0.1:3306/metaMall_oms
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
